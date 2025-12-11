@@ -1,103 +1,138 @@
-@media screen and (max-width: 1400px) {
-  #profile {
-    height: 83vh;
-    margin-bottom: 6rem;
-  }
-  .about-containers {
-    flex-wrap: wrap;
-  }
-  #contact,
-  #projects {
-    height: fit-content;
-  }
-}
-
+/* --- MEDIA QUERIES --- */
 @media screen and (max-width: 1200px) {
   #desktop-nav {
     display: none;
   }
   #hamburger-nav {
     display: flex;
-  }
-  #experience,
-  .experience-details-container {
-    margin-top: 2rem;
-  }
-  #profile,
-  .section-container {
-    display: block;
-  }
-  .arrow {
-    display: none;
-  }
-  section,
-  .section-container {
-    height: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
   section {
     margin: 0 5%;
   }
-  .section__pic-container {
-    width: 275px;
-    height: 275px;
-    margin: 0 auto 2rem;
+
+  #profile {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+    height: auto;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    justify-content: center;
   }
-  .about-containers {
-    margin-top: 0;
+
+  .section__pic-container {
+    height: 280px;
+    width: 280px;
+    margin: 0 auto;
+  }
+
+  .section__text {
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 600px) {
-  #contact,
-  footer {
-    height: 40vh;
-  }
-  #profile {
-    height: 83vh;
-    margin-bottom: 0;
-  }
-  article {
-    font-size: 1rem;
-  }
-  footer nav {
-    height: fit-content;
-    margin-bottom: 2rem;
-  }
-  .about-containers,
-  .contact-info-upper-container,
-  .btn-container {
-    flex-wrap: wrap;
-  }
-  .contact-info-container {
-    margin: 0;
-  }
-  .contact-info-container p,
-  .nav-links li a {
-    font-size: 1rem;
-  }
-  .experience-sub-title {
-    font-size: 1.25rem;
-  }
-  .logo {
-    font-size: 1.5rem;
-  }
-  .nav-links {
+@media screen and (max-width: 992px) {
+  /* Tablet Optimization */
+  .about-containers {
     flex-direction: column;
-    gap: 0.5rem;
-    text-align: center;
+    gap: 2rem;
   }
-  .section__pic-container {
-    width: auto;
-    height: 46vw;
-    justify-content: center;
+  .details-container {
+    width: 100%;
+    max-width: 600px;
   }
-  .section__text__p2 {
-    font-size: 1.25rem;
-  }
+}
+
+@media screen and (max-width: 768px) {
   .title {
     font-size: 2rem;
   }
+  .contact-info-upper-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .contact-card {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .boot-log {
+    font-size: 0.8rem;
+  }
+
+  .section__text__p2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    padding: 0 1rem;
+  }
+  section {
+    margin: 0 1rem;
+  } /* Maximize width usage */
+
+  .section__pic-container {
+    height: 220px;
+    width: 220px;
+  }
+  .title {
+    font-size: 1.5rem;
+    word-break: break-word;
+  }
+  .section__text__p1 {
+    font-size: 0.9rem;
+  }
+
+  .btn {
+    width: 100%;
+  }
+  .btn-container {
+    gap: 1rem;
+    width: 100%;
+  }
+
+  /* Stack skills on very small screens for better readability */
+  .skill-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   .text-container {
-    text-align: justify;
+    font-size: 0.9rem;
+    border-left: none;
+    padding: 1rem;
+    text-align: left;
+  }
+
+  .btn-group {
+    width: 100%;
+  }
+  .btn-group .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .cert-card {
+    padding: 1.5rem;
+  }
+
+  /* Contact adjustments */
+  .contact-card {
+    padding: 1rem;
+  }
+  .contact-card i {
+    font-size: 1.2rem;
+  }
+  .contact-card a {
+    font-size: 0.9rem;
   }
 }

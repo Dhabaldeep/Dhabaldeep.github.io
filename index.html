@@ -2,440 +2,333 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Deep Dhabal - Cloud Engineer Portfolio showcasing skills in cloud, DevOps tools, and certifications. Contact for professional inquiries." />
-    <meta property="og:title" content="Deep Dhabal - Cloud Engineer Portfolio" />
-<meta property="og:description" content="Showcasing skills in cloud computing and DevOps tools." />
-<meta property="og:url" content="https://dhabaldeep.onrender.com/" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://dhabaldeep.onrender.com/assets/profile-pic.png" />
-    <title>Deep Dhabal - Cloud Engineer | DevOps Expert</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-    <link rel="icon" type="image/jpeg" href="./assets/profile-pic.png" />
-    <link rel="canonical" href="https://dhabaldeep.onrender.com/" />
+    <meta
+      name="description"
+      content="Deep Dhabal - Cloud & DevOps Engineer Portfolio"
+    />
+    <title>Deep Dhabal | Cloud & DevOps Engineer</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./assets/profile-pic.png" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- mediaquery -->
+    <link rel="stylesheet" href="./mediaqueries.css" />
   </head>
 
   <body>
+    <!-- Boot Sequence -->
+    <div id="boot-screen">
+      <div class="boot-log" id="boot-log"></div>
+    </div>
+
+    <!-- Download Overlay -->
+    <div id="download-screen">
+      <div class="download-terminal" id="dl-terminal"></div>
+    </div>
+
+    <!-- CRT Overlays -->
+    <div class="background-grid"></div>
+    <div class="scanline"></div>
+    <div class="crt-vignette"></div>
+
+    <!-- Desktop Navigation -->
     <nav id="desktop-nav">
-      <div class="logo">Deep Dhabal</div>
+      <div class="logo" onclick="location.href='#'">
+        root<span>@DeepDhabal</span>
+      </div>
       <div>
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#certification">Certification</a></li>
-          <!-- <li><a href="#projects">Projects</a></li> -->
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about">~/about</a></li>
+          <li><a href="#experience">~/stack</a></li>
+          <li><a href="#certification">~/certs</a></li>
+          <li><a href="#contact">~/contact</a></li>
         </ul>
       </div>
     </nav>
+
+    <!-- Mobile Navigation -->
     <nav id="hamburger-nav">
-      <div class="logo">Deep Dhabal</div>
+      <div class="logo" onclick="location.href='#'">&lt;Deep /&gt;</div>
       <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
+        <div class="hamburger-icon" id="hamburger-btn">
           <span></span>
           <span></span>
           <span></span>
         </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#certification" onclick="toggleMenu()">Certification</a></li>
-          <!-- <li><a href="#projects" onclick="toggleMenu()">Projects</a></li> -->
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
+        <ul class="menu-links">
+          <li><a href="#about" class="menu-link">./About.sh</a></li>
+          <li><a href="#experience" class="menu-link">./Stack.json</a></li>
+          <li><a href="#certification" class="menu-link">./Certs.pem</a></li>
+          <li><a href="#contact" class="menu-link">./Contact.txt</a></li>
+        </ul>
       </div>
     </nav>
+
+    <!-- Profile Section -->
     <section id="profile">
       <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="Deep profile picture" />
+        <img
+          src="./assets/profile-pic.png"
+          onerror="this.src='https://via.placeholder.com/350x350/000000/0aff00?text=USER_IMG'"
+          alt="Deep Dhabal profile"
+        />
       </div>
       <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
+        <p class="section__text__p1">> echo $USER</p>
         <h1 class="title">Deep Dhabal</h1>
-        <p class="section__text__p2"><span class="typed"></span></p>
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('https://deep-dhabal-resume.s3.ap-south-1.amazonaws.com/resume/DeepDhabal_Resume_Cloud-Engineer.pdf', '_blank')"
-          >
-            Download Resume
-          </button>
+        <div class="section__text__p2">
+          <span class="typed-text"></span><span class="typed-cursor"></span>
+        </div>
 
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
+        <div class="btn-container">
+          <button class="btn btn-primary" onclick="initiateDownload()">
+            <i class="fa-solid fa-download"></i> [ Download Resume ]
+          </button>
+          <button class="btn btn-secondary" onclick="location.href='#contact'">
+            <i class="fa-regular fa-envelope"></i> [ Contact Info ]
           </button>
         </div>
+
         <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick=`location.href='https://linkedin.com/in/Dhabaldeep'`
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick=`location.href='https://github.com/Dhabaldeep'`
-          />
+          <a
+            href="https://linkedin.com/in/Dhabaldeep"
+            target="_blank"
+            class="social-icon"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://github.com/Dhabaldeep"
+            target="_blank"
+            class="social-icon"
+            aria-label="GitHub"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
         </div>
       </div>
     </section>
+
+    <!-- About Section -->
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
+      <p class="section__text__p1"># System Information</p>
       <h2 class="title">About Me</h2>
       <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.jpeg"
-            alt="Profile picture"
-            class="about-pic"
-          />
-        </div>
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>1+ years <br />Devops & Cloud Engineer</p>
+              <i class="fa-solid fa-server icon-large"></i>
+              <h3>Uptime</h3>
+              <p>1+ Years <br />DevOps & Cloud</p>
             </div>
             <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Tech in Computer Science<br />Diploma in Computer Science</p>
+              <i class="fa-solid fa-graduation-cap icon-large"></i>
+              <h3>Kernel</h3>
+              <p>B.Tech CS <br />Diploma CS</p>
             </div>
           </div>
           <div class="text-container">
             <p>
-              I'm Deep Dhabal, an enthusiastic aspiring Cloud Engineer with a
-              fervent passion for technology and its boundless possibilities.
-              Drawing from my background in B.Tech In Computer Science , I'm
-              deeply committed to mastering the intricate realm of cloud
-              computing. My goal is to architect robust, scalable solutions that
-              optimize performance and drive organizational success in the
-              ever-evolving digital landscape. I relish the challenges inherent
-              in designing cloud-native architectures and implementing
-              cutting-edge DevOps methodologies to streamline operations and
-              enhance efficiency. With a proactive approach to learning and a
-              knack for problem-solving, I eagerly embrace new technologies and
-              methodologies to stay at the forefront of industry trends. Beyond
-              my technical expertise, I value collaboration and teamwork,
-              recognizing the power of collective ingenuity in overcoming
-              obstacles and achieving shared goals. 
+              $ cat about_me.txt<br /><br />
+              I am a Cloud Engineer passionate about architecting scalable,
+              resilient infrastructure. My expertise lies in
+              <strong>AWS, Docker, and Kubernetes</strong>. I treat
+              infrastructure as code and believe in automating everything that
+              needs to be done more than once. I am currently focused on
+              mastering cloud-native architectures and implementing cutting-edge
+              DevOps methodologies.
+            </p>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
     </section>
+
+    <!-- Tech Stack Section -->
     <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h2 class="title">Experience</h2>
+      <p class="section__text__p1"># Dependencies & Packages</p>
+      <h2 class="title">Tech Stack</h2>
+
       <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Cloud Providers</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>AWS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>GCP</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>AZURE</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
+        <!-- Cloud -->
+        <div class="skill-category">
+          <h3 class="skill-header">
+            <i class="fa-solid fa-cloud"></i> ~/Cloud_Providers
+          </h3>
+          <div class="skill-grid">
+            <div class="skill-card">
+              <i class="fa-brands fa-aws"></i>
+              <div>
+                <h4>AWS</h4>
+                <small>Experienced</small>
+              </div>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-google"></i>
+              <div>
+                <h4>GCP</h4>
+                <small>Intermediate</small>
+              </div>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-microsoft"></i>
+              <div>
+                <h4>Azure</h4>
+                <small>Basic</small>
+              </div>
             </div>
           </div>
-          <div class="details-container">
-            <h2 class="experience-sub-title">Devops Tools</h2>
-            <div class="article-container">
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Git & Github</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Jenkins</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Docker</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Ansible</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Terraform</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
-              <article>
-                <img
-                  src="./assets/checkmark.png"
-                  alt="Experience icon"
-                  class="icon"
-                />
-                <div>
-                  <h3>Kubernetes</h3>
-                  <p>Basic</p>
-                </div>
-              </article>
+        </div>
+
+        <!-- DevOps -->
+        <div class="skill-category">
+          <h3 class="skill-header">
+            <i class="fa-solid fa-gears"></i> ~/DevOps_Tools
+          </h3>
+          <div class="skill-grid">
+            <div class="skill-card">
+              <i class="fa-brands fa-docker"></i>
+              <h4>Docker</h4>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-dharmachakra"></i>
+              <h4>K8s</h4>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-jenkins"></i>
+              <h4>Jenkins</h4>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-terminal"></i>
+              <h4>Ansible</h4>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-cubes-stacked"></i>
+              <h4>Terraform</h4>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-git-alt"></i>
+              <h4>Git</h4>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scripting -->
+        <div class="skill-category">
+          <h3 class="skill-header">
+            <i class="fa-solid fa-code"></i> ~/Scripting_&_OS
+          </h3>
+          <div class="skill-grid">
+            <div class="skill-card">
+              <i class="fa-brands fa-linux"></i>
+              <h4>Linux</h4>
+            </div>
+            <div class="skill-card">
+              <i class="fa-brands fa-python"></i>
+              <h4>Python</h4>
+            </div>
+            <div class="skill-card">
+              <i class="fa-solid fa-terminal"></i>
+              <h4>Bash</h4>
             </div>
           </div>
         </div>
       </div>
-
-
-
-      <div class="details-container">
-        <h2 class="experience-sub-title">Tech Stack</h2>
-        <div class="article-container">
-          <article>
-            <img
-              src="./assets/checkmark.png"
-              alt="Experience icon"
-              class="icon"
-            />
-            <div>
-              <h3>Linux</h3>
-              <p>Experienced</p>
-            </div>
-          </article>
-          <article>
-            <img
-              src="./assets/checkmark.png"
-              alt="Experience icon"
-              class="icon"
-            />
-            <div>
-              <h3>Bash</h3>
-              <p>Intermediate</p>
-            </div>
-          </article>
-          <article>
-            <img
-              src="./assets/checkmark.png"
-              alt="Experience icon"
-              class="icon"
-            />
-            <div>
-              <h3>Python</h3>
-              <p>Intermediate</p>
-            </div>
-          </article>
-          <article>
-            <img
-              src="./assets/checkmark.png"
-              alt="Experience icon"
-              class="icon"
-            />
-            <div>
-              <h3>Networking</h3>
-              <p>Intermediate</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#certification'"
-      />
     </section>
 
+    <!-- Certifications Section -->
     <section id="certification">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h2 class="title">Certifications and Skills</h2>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/aws-certified-cloud-practitioner.png"
-                alt="aws-certified-cloud-practitioner"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">
-              Cloud Practitioner
-            </h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick=`location.href='https://deep-dhabal-resume.s3.ap-south-1.amazonaws.com/certification/AWS+Certified+Cloud+Practitioner+certificate.pdf'`
-              >
-                Certificate
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick=`location.href='https://www.credly.com/badges/28e81503-0b67-4fb2-97d5-2ea8055c5264/public_url'`
-              >
-                Verify
-              </button>
-            </div>
+      <p class="section__text__p1"># Sudo Privileges</p>
+      <h2 class="title">Certifications</h2>
+      <div class="certs-container">
+        <div class="cert-card">
+          <div class="cert-icon"><i class="fa-brands fa-aws"></i></div>
+          <h3>AWS Certified Cloud Practitioner</h3>
+          <div class="btn-group">
+            <button
+              class="btn btn-sm btn-primary"
+              onclick="window.open('#', '_blank')"
+            >
+              [ Certificate ]
+            </button>
+            <button
+              class="btn btn-sm btn-secondary"
+              onclick="window.open('#', '_blank')"
+            >
+              [ Verify ]
+            </button>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/aws-re-start-graduate.png"
-                alt="aws restart graduate"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">
-              aws restart graduate
-            </h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick=`location.href='https://www.credly.com/badges/d7289167-e27b-46b6-b6f2-d2e74638e7cf/public_url'`
-              >
-                Verify
-              </button>
-            </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3>AWS Re/Start Graduate</h3>
+          <div class="btn-group">
+            <button
+              class="btn btn-sm btn-secondary"
+              onclick="window.open('#', '_blank')"
+            >
+              [ Verify Credly ]
+            </button>
           </div>
         </div>
       </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
+      <p class="section__text__p1"># Ping Me</p>
       <h2 class="title">Contact Me</h2>
       <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
+        <div class="contact-card">
+          <i class="fa-solid fa-envelope"></i>
           <p>
-            <a href="mailto:deepdhabal2001@gmail.com">deepdhabal2001@gmail.com</a>
+            <a href="mailto:deepdhabal2001@gmail.com"
+              >deepdhabal2001@gmail.com</a
+            >
           </p>
         </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/phone.png"
-            alt="Phone icon"
-            class="icon contact-icon"
-          />
-          <p><a>+91 8101930588</a></p>
+        <div class="contact-card">
+          <i class="fa-brands fa-linkedin"></i>
+          <p>
+            <a href="https://linkedin.com/in/Dhabaldeep" target="_blank"
+              >LinkedIn Profile</a
+            >
+          </p>
         </div>
       </div>
     </section>
+
     <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#certification">Certification</a></li>
-            <!-- <li><a href="#projects">Projects</a></li> -->
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2024 Deep Dhabal. All Rights Reserved.</p>
+      <p>
+        Designed & Built by
+        <span style="color: var(--primary)">root@DeepDhabal</span>
+      </p>
+      <p class="copyright">Copyright &#169; 2025</p>
     </footer>
+
+    <!-- JAVASCRIPT -->
+
     <script src="./Script.js"></script>
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Deep Dhabal",
-        "jobTitle": "Cloud Engineer",
-        "url": "https://dhabaldeep.onrender.com",
-        "sameAs": [
-          "https://www.linkedin.com/in/your-profile",
-          "https://github.com/your-profile"
-        ]
-      }
-      </script>
-      
   </body>
 </html>
