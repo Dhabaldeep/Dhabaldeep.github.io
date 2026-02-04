@@ -275,6 +275,90 @@
       </div>
     </section>
 
+    <!-- Projects Section -->
+
+<!-- <section id="projects">
+  <p class="section__text__p1"># CI/CD Pipelines</p>
+  <h2 class="title">Active Deployments</h2>
+  
+  <div class="pipeline-container">
+<div class="pipeline-row">
+  <div class="pipeline-stage">
+    <div class="stage-label">SOURCE</div>
+    <div class="pipeline-card">
+      <i class="fa-brands fa-node-js"></i>
+      <h4>Node.js App</h4>
+      <p>Source Code Control</p>
+    </div>
+  </div>
+  
+  <div class="pipeline-connector"><i class="fa-solid fa-arrow-right"></i></div>
+  
+  <div class="pipeline-stage">
+    <div class="stage-label">AUTOMATE</div>
+    <div class="pipeline-card">
+      <i class="fa-brands fa-jenkins"></i>
+      <h4>Jenkins & Docker</h4>
+      <p>Build & Image Push</p>
+    </div>
+  </div>
+
+  <div class="pipeline-connector"><i class="fa-solid fa-arrow-right"></i></div>
+
+  <div class="pipeline-stage">
+    <div class="stage-label">INFRASTRUCTURE</div>
+    <div class="pipeline-card">
+      <i class="fa-brands fa-aws"></i>
+      <h4>EC2 Deployment</h4>
+      <button class="btn-sm btn-secondary" onclick="window.open('https://github.com/Dhabaldeep/YOUR_REPO', '_blank')">[ View Code ]</button>
+    </div>
+  </div>
+</div>
+
+<hr style="border: 1px dashed var(--border-color); margin: 2rem 0; width: 100%;">
+
+<div class="pipeline-row">
+  <div class="pipeline-stage">
+    <div class="stage-label">PLAN</div>
+    <div class="pipeline-card">
+      <i class="fa-solid fa-scroll"></i>
+      <h4>Ansible Playbooks</h4>
+      <p>Desired State Config</p>
+    </div>
+  </div>
+  
+  <div class="pipeline-connector"><i class="fa-solid fa-arrow-right"></i></div>
+  
+  <div class="pipeline-stage">
+    <div class="stage-label">EXECUTE</div>
+    <div class="pipeline-card">
+      <i class="fa-solid fa-terminal"></i>
+      <h4>Control Node</h4>
+      <p>SSH Automation</p>
+    </div>
+  </div>
+
+  <div class="pipeline-connector"><i class="fa-solid fa-arrow-right"></i></div>
+
+  <div class="pipeline-stage">
+    <div class="stage-label">TARGET</div>
+    <div class="pipeline-card">
+      <i class="fa-solid fa-server"></i>
+      <h4>Multi-Server Sync</h4>
+      <button class="btn-sm btn-secondary" onclick="window.open('https://github.com/Dhabaldeep/YOUR_REPO', '_blank')">[ View Scripts ]</button>
+    </div>
+  </div>
+</div>
+  </div>
+</section> -->
+
+
+
+
+
+
+
+
     <!-- Certifications Section -->
     <section id="certification">
       <p class="section__text__p1"># Sudo Privileges</p>
@@ -286,19 +370,29 @@
           <div class="btn-group">
             <button
               class="btn btn-sm btn-primary"
-              onclick="window.open('#', '_blank')"
+              onclick="openCertViewer('AWS Certified Cloud Practitioner certificate.pdf')"
             >
               [ Certificate ]
             </button>
+
+            
             <button
               class="btn btn-sm btn-secondary"
-              onclick="window.open('#', '_blank')"
+              onclick="window.open('https://cp.certmetrics.com/amazon/en/public/verify/credential/a0b71c764ca5478ebd72dfe3f1fb531d', '_blank')"
             >
               [ Verify ]
             </button>
           </div>
         </div>
-
+        <div id="cert-modal" class="modal-backdrop">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="terminal-prompt">viewer@DeepDhabal:~$ cat certificate.pdf</span>
+                  <button class="close-btn" onclick="closeCertViewer()">[ X ]</button>
+                </div>
+                <iframe id="pdf-viewer" src="" frameborder="0"></iframe>
+              </div>
+            </div>
         <div class="cert-card">
           <div class="cert-icon">
             <i class="fa-solid fa-graduation-cap"></i>
@@ -307,7 +401,7 @@
           <div class="btn-group">
             <button
               class="btn btn-sm btn-secondary"
-              onclick="window.open('#', '_blank')"
+              onclick="window.open('https://www.credly.com/badges/d7289167-e27b-46b6-b6f2-d2e74638e7cf/public_url', '_blank')"
             >
               [ Verify Credly ]
             </button>

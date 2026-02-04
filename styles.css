@@ -34,7 +34,7 @@ body {
   overflow-x: hidden;
   /* CRT Glow Effect on Text */
   text-shadow: 0 0 2px rgba(10, 255, 0, 0.2);
-  animation: flicker 0.15s infinite;
+  /* animation: flicker 0.15s infinite; */
   text-shadow: var(--glow);
 }
 
@@ -789,4 +789,147 @@ footer {
 @keyframes scanline {
   0% { bottom: 100%; }
   100% { bottom: -100%; }
+}
+
+
+
+/* Modal Backdrop */
+.modal-backdrop {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal Window */
+.modal-content {
+  width: 90%;
+  height: 85%;
+  background: #000;
+  border: 2px solid var(--primary); /* Uses your green/primary color */
+  box-shadow: 0 0 20px var(--primary);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modal Header/Toolbar */
+.modal-header {
+  padding: 10px;
+  background: var(--primary);
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Fira Code', monospace;
+  font-weight: bold;
+}
+
+.close-btn {
+  background: transparent;
+  border: 1px solid #000;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 2px 8px;
+}
+
+.close-btn:hover {
+  background: #000;
+  color: var(--primary);
+}
+
+/* The PDF Frame */
+#pdf-viewer {
+  width: 100%;
+  height: 100%;
+  background: #fff; /* White background inside for the PDF */
+}
+
+
+/* --- PIPELINE STYLES --- */
+.pipeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 2rem 0;
+}
+
+.pipeline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pipeline-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.stage-label {
+  font-size: 0.7rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+.pipeline-card {
+  background: #000;
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.pipeline-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
+}
+
+.pipeline-card i {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.pipeline-connector {
+  color: var(--primary);
+  font-size: 1.5rem;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.3; transform: translateX(-5px); }
+  50% { opacity: 1; transform: translateX(5px); }
+  100% { opacity: 0.3; transform: translateX(-5px); }
+}
+
+/* Mobile adjust: stack the pipeline vertically on small screens */
+@media screen and (max-width: 768px) {
+  .pipeline-row {
+    flex-direction: column;
+  }
+  .pipeline-connector {
+    transform: rotate(90deg);
+    margin: 1rem 0;
+    animation: pulse-v 1.5s infinite;
+  }
+}
+
+@keyframes pulse-v {
+  0% { opacity: 0.3; transform: rotate(90deg) translateX(-5px); }
+  50% { opacity: 1; transform: rotate(90deg) translateX(5px); }
+  100% { opacity: 0.3; transform: rotate(90deg) translateX(-5px); }
 }

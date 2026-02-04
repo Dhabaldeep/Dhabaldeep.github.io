@@ -216,3 +216,40 @@ function erase() {
     setTimeout(type, typingDelay + 1100);
   }
 }
+
+
+function openCertViewer(pdfPath) {
+    const modal = document.getElementById('cert-modal');
+    const iframe = document.getElementById('pdf-viewer');
+    
+    // Set the PDF source
+    iframe.src = pdfPath;
+    
+    // Show the modal
+    modal.style.display = 'flex';
+    
+    // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCertViewer() {
+    const modal = document.getElementById('cert-modal');
+    const iframe = document.getElementById('pdf-viewer');
+    
+    // Hide the modal
+    modal.style.display = 'none';
+    
+    // Clear the source to stop loading the PDF in the background
+    iframe.src = '';
+    
+    // Re-enable scrolling
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal if user clicks outside the content box
+window.onclick = function(event) {
+    const modal = document.getElementById('cert-modal');
+    if (event.target == modal) {
+        closeCertViewer();
+    }
+}
